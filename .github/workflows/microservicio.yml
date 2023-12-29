@@ -17,3 +17,8 @@ jobs:
           chmod +x gradlew
           ./gradlew clean build jacocoTestCoverageVerification
           ls -ltr build/libs/
+
+      - name: Analisis con SONAR CLOUD
+        run: |
+          chmod +x gradlew
+          ./gradlew build sonar -Dsonar.token=${{ secrets.token_sc }}
