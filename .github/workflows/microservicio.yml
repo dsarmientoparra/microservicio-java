@@ -1,6 +1,8 @@
 name: CI-devops
 on:
-  push:
+  push: 
+    branches:
+      - feature-ms-dianasarmiento-mensaje
   workflow_dispatch:
 jobs:
 
@@ -9,3 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Build - Construir proyecto
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+          ls -ltr
