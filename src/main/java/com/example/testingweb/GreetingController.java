@@ -19,4 +19,15 @@ public class GreetingController {
 		return service.greet();
 	}
 
+	
+	private static final String ALGORITHM = "AES";
+    private static final byte[] KEY = "mykey".getBytes();
+
+    public static byte[] encrypt(String plainText) throws Exception {
+        Key key = new SecretKeySpec(KEY, ALGORITHM);
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        cipher.init(Cipher.ENCRYPT_MODE, key);
+        return cipher.doFinal(plainText.getBytes());
+    }
+
 }
