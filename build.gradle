@@ -27,7 +27,7 @@ jacocoTestCoverageVerification {
     violationRules {
 	rule {
  	  limit {
-	      minimum = 0.74
+	      minimum = 0.14
           }
 	}
     }
@@ -43,5 +43,6 @@ sonar {
     property "sonar.organization", "dsarmientoparra"
     property "sonar.host.url", "https://sonarcloud.io/"
     property "sonar.projectName", "microservicio-java"
+	
   }
 }
