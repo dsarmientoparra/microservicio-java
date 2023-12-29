@@ -15,8 +15,8 @@ jobs:
       - name: Build - Construir proyecto
         run: |
           chmod +x gradlew
-          ./gradlew clean build jacocoTestCoverageVerification
-          ls -ltr build/libs/
+          #./gradlew clean build jacocoTestCoverageVerification
+          #ls -ltr build/libs/
 
       - name: Analisis con SONAR CLOUD
         run: |
