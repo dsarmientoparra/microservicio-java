@@ -38,12 +38,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Docker Build 
+      - name: Construir imagen de docker  
         run: |
           docker build --tag dsarmientoparra/microservicio-java:latest .
           docker images
 
-      - name: Docker Push 
+      - name: Push de imagen creada en docker hub 
         run: |
           docker push dsarmientoparra/microservicio-java
 
@@ -54,7 +54,7 @@ jobs:
 
       - uses: actions/checkout@v3
     
-      - name: Desplegar en kubernetes
+      - name: Desplegar - k8s
         run: |
           kubectl delete -f manifiesto-microservicio.yml
           kubectl apply -f manifiesto-microservicio.yml
