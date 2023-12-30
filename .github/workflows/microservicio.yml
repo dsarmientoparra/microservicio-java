@@ -56,4 +56,5 @@ jobs:
     
       - name: Desplegar en kubernetes
         run: |
+          kubectl delete -f manifiesto-microservicio.yml
           kubectl apply -f manifiesto-microservicio.yml
